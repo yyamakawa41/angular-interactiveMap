@@ -1,3 +1,4 @@
+
 .blue{
 	fill: blue;
 }
@@ -10,9 +11,8 @@
 	fill: #c2b280;
 }
 
-/*scalable vector graphics*/
 #wrapper svg{
-	background-color: #cacaca;
+	background-color: #cacaca
 }
 
 .state-info{
@@ -21,3 +21,4 @@
 	font-weight: bold;
 	text-align: center;
 }
+

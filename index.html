@@ -1,38 +1,30 @@
 <!DOCTYPE html>
 <html ng-app="interactiveMap">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="angular.min.js"></script>
-	<script type="text/javascript" src="angular-route.min.js"></script>
-	<script type="text/javascript" src="state-objects.js"></script>
-	<script type="text/javascript" src="controller.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/state-objects.js"></script>
+	<script type="text/javascript" src="js/controller.js"></script>
 
 </head>
 <body>
 
-	<div id="wrapper" ng-controller="interactiveMapCntrl">
-		<svg width="730" height="500">
-			<g class="states" ng-repeat="state in states" click-state>
-				<path class="state {{state.stateColor}}" ng-attr-d="{{state.vector}}" stroke="white"></path>
-				<foreignObject class="state-name" ng-attr-x={{state.nameX}} ng-attr-y={{state.nameY}} width="20" height="30">
+<div id="wrapper" ng-controller="interactiveMapCntrl">
 
-					<body>
-						<div class="state-info">
-							{{state.abbr}}
-							<br />
-							{{state.electoralVotes}}
-						</div>
-					</body>
-
-				</foreignObject>
-			</g>
-		</svg>
-	</div>
+	<svg width="730" height="500">
+		<g class="states" ng-repeat="state in states" click-state>
+			<path class="state {{state.stateColor}}" ng-attr-d="{{state.vector}}" stroke="white"></path>
+			<foreignObject ng-attr-x={{state.nameX}} ng-attr-y={{state.nameY}}>
+				<body>
+					<div class="state-info">{{state.abbr}}<br/>{{state.electoralVotes}}</div>	
+				</body>
+			</foreignObject>
+		</g>
+	</svg>
+</div>
 
 </body>
 </html>
